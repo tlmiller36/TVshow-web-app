@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IShowBasics} from '../ishow-basics';
+import { ShowService } from '../show/show.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import {IShowBasics} from '../ishow-basics';
 })
 export class ShowBasicsComponent implements OnInit {
 basic: IShowBasics
-  constructor() { 
+  constructor(private showservice: ShowService) { 
     this.basic = {
       name: 'Ellen',
       image: '',
