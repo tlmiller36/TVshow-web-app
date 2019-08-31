@@ -11,13 +11,10 @@ import { ShowService } from '../show/show.service';
 export class ShowBasicsComponent implements OnInit {
 basic: IShowBasics
   constructor(private showservice: ShowService) { 
-    this.basic = {
-      name: 'Ellen',
-      image: '',
-      summary: 'Funny talk show'}
   }
 
   ngOnInit() {
+    this.showservice.getMainShow('name').subscribe(data => this.basic = data);
   }
 
 }
